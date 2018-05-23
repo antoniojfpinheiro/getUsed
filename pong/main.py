@@ -3,6 +3,7 @@ from kivy.uix.widget import Widget
 from kivy.properties import NumericProperty, ReferenceListProperty, ObjectProperty
 from kivy.vector import Vector
 from kivy.clock import Clock
+from kivy.config import Config
 
 
 class PongPaddle(Widget):
@@ -71,9 +72,16 @@ class PongGame(Widget):
         if touch.x > self.width - self.width / 3:
             self.player2.center_y = touch.y
 
+    def on_touch_down(self, touch):
+        if 'angle' in touch.profile:
+            print('The touch angle is', touch.a)
+
 
 class PongApp(App):
     def build(self):
+        # TUIO/Multitouch enabled
+        Config.set('input', 'multitouchscreen1', 'tuio,127.0.0.1:3333')
+
         game = PongGame()
         game.serve_ball()
         Clock.schedule_interval(game.update, 1.0/60.0)
