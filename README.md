@@ -1,6 +1,6 @@
 # getUsed
 
-getUsed is the name of my multi touch table, that I designed an developed back in 2012.
+getUsed is the name the multi touch table that I built back in 2012.
 For more information about the table: http://tinyurl.com/multitouch-antoniopinheiro
 
 <br/> This repository contains a collection of apps, developed in kivy, to showcase the multi touch capabilities of my table.
