@@ -3,7 +3,6 @@ from kivy.uix.widget import Widget
 from kivy.properties import NumericProperty, ReferenceListProperty, ObjectProperty
 from kivy.vector import Vector
 from kivy.clock import Clock
-from kivy.config import Config
 
 
 class PongPaddle(Widget):
@@ -78,14 +77,15 @@ class PongGame(Widget):
 
 
 class PongApp(App):
-    def build(self):
-        # TUIO/Multitouch enabled
-        Config.set('input', 'multitouchscreen1', 'tuio,127.0.0.1:3333')
 
+    def build(self):
         game = PongGame()
         game.serve_ball()
         Clock.schedule_interval(game.update, 1.0/60.0)
         return game
+
+    def on_pause(self):
+        return print("pause")
 
 
 if __name__ == '__main__':

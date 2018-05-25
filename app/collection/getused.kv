@@ -1,0 +1,60 @@
+#: kivy 1.10.0
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+ScreenManager:
+    transition: FadeTransition()
+    duration: '0.5'
+    id: screen_manager
+    CollectionScreen:
+        id: collection_screen
+        name: 'collection'
+        manager: 'screen_manager'
+    PongScreen:
+        id: pong_screen
+        name: 'pong'
+        manager: 'screen_manager'
+    MediaScreen:
+        id: media_screen
+        name: 'media'
+        manager: 'screen_manager'
+    PaintScreen:
+        id: paint_screen
+        name: 'paint'
+        manager: 'screen_manager'
+
+<CollectionScreen>
+    name: 'collection'
+    BoxLayout:
+        Button:
+            text: 'Pong'
+            on_press: app.root.current = 'pong'
+        Button:
+            text: 'Media'
+            on_press: app.root.current = 'media'
+        Button:
+            text: 'Paint'
+            on_press: app.root.current = 'paint'
+
+<PongScreen>
+    id: pong_class
+    name: 'pong'
+
+    Button:
+        text: 'Back'
+        on_press: app.root.current = 'collection'
+
+<MediaScreen>
+    id: media_class
+    name: 'media'
+
+    Button:
+        text: 'Back'
+        on_press: app.root.current = 'collection'
+
+<PaintScreen>
+    id: paint_class
+    name: 'paint'
+
+    Button:
+        text: 'Back'
+        on_press: app.root.current = 'collection'
