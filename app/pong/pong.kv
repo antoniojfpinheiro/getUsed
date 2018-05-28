@@ -1,6 +1,5 @@
 #:kivy 1.10.0
 
-
 <PongBall>:
     size: 50, 50
     canvas:
@@ -16,6 +15,7 @@
             size:self.size
 
 <PongGame>:
+    id: pong_game_class
     ball: pong_ball
     player1: player_left
     player2: player_right
@@ -50,4 +50,3 @@
         id: player_right
         x: root.width-self.width
         center_y: root.center_y
-

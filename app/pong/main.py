@@ -79,13 +79,15 @@ class PongGame(Widget):
 class PongApp(App):
 
     def build(self):
+        
+        self.title = 'getUsed App Collection'
+        self.icon = '../resources/getused_icon.ico'
+        print(self.get_application_icon())
+
         game = PongGame()
         game.serve_ball()
         Clock.schedule_interval(game.update, 1.0/60.0)
         return game
-
-    def on_pause(self):
-        return print("pause")
 
 
 if __name__ == '__main__':

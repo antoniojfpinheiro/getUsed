@@ -26,10 +26,15 @@ class PaintApp(App):
     def build(self):
         parent = Widget()
         self.painter = PaintWidget()
-        btn_clear = Button(text='Clear')
+        btn_clear = Button(text='Clear', pos=(200, 0))
         btn_clear.bind(on_release=self.clear_canvas)
         parent.add_widget(self.painter)
         parent.add_widget(btn_clear)
+
+        self.title = 'getUsed App Collection'
+        self.icon = '../resources/getused_icon.ico'
+        print(self.get_application_icon())
+
         return parent
 
     def clear_canvas(self, obj):

@@ -23,6 +23,10 @@ class MediaApp(App):
 
     def build(self):
 
+        self.title = 'getUsed App Collection'
+        self.icon = '../resources/getused_icon.ico'
+        print(self.get_application_icon())
+
         # The root is created in pictures.kv
         root = self.root
 

@@ -1,5 +1,6 @@
-from kivy.uix.screenmanager import Screen, ScreenManager
+from kivy.uix.screenmanager import Screen
 from kivy.app import App
+from kivy.uix.widget import Widget
 
 
 class CollectionScreen(Screen):
@@ -15,6 +16,10 @@ class MediaScreen(Screen):
 
 
 class PaintScreen(Screen):
+    pass
+
+
+class BackButton(Widget):
     pass
 
 

@@ -2,8 +2,7 @@
 #:import FadeTransition kivy.uix.screenmanager.FadeTransition
 
 ScreenManager:
-    transition: FadeTransition()
-    duration: '0.5'
+    transition: FadeTransition(duration=0.25)
     id: screen_manager
     CollectionScreen:
         id: collection_screen
@@ -13,14 +12,23 @@ ScreenManager:
         id: pong_screen
         name: 'pong'
         manager: 'screen_manager'
+        BackButton:
     MediaScreen:
         id: media_screen
         name: 'media'
         manager: 'screen_manager'
+        BackButton:
     PaintScreen:
         id: paint_screen
         name: 'paint'
         manager: 'screen_manager'
+        BackButton:
+
+<BackButton>
+    Button:
+        text: 'Back'
+        on_press: app.root.current = 'collection'
+        size_hint: 10,10
 
 <CollectionScreen>
     name: 'collection'
@@ -38,23 +46,13 @@ ScreenManager:
 <PongScreen>
     id: pong_class
     name: 'pong'
-
-    Button:
-        text: 'Back'
-        on_press: app.root.current = 'collection'
+    on_enter: pong_class.start()
 
 <MediaScreen>
     id: media_class
     name: 'media'
 
-    Button:
-        text: 'Back'
-        on_press: app.root.current = 'collection'
-
 <PaintScreen>
     id: paint_class
     name: 'paint'
-
-    Button:
-        text: 'Back'
-        on_press: app.root.current = 'collection'
+    on_enter: paint_class.start()
