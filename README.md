@@ -30,7 +30,7 @@ To run the app, execute the following command:
 python3 -m app
 ```
 
-### Notes
+## Troubleshooting
 
 If you're having problems to demo the app using your trackpad, execute the following command:
 
