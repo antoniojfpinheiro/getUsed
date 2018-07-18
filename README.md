@@ -32,7 +32,7 @@ python3 -m app
 
 ## Troubleshooting
 
-If you're having problems to demo the app using your trackpad, execute the following command:
+If you're having problems testing the app using your trackpad, execute the following command:
 
 ```
 sudo chmod 755 /dev/input/event9
